@@ -1,0 +1,74 @@
+.btn {
+  @include animate(background);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: auto;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px 20px;
+
+  @include media(">=tablet") {
+    font-size: 16px;
+    padding: 15px 21px;
+  }
+
+  &.btn-sm {
+    height: 31px;
+    font-size: 12px;
+    padding: 10px;
+
+    @include media('>=tablet') {
+      height: 41px;
+      font-size: 14px;
+      padding: 10px 17px;
+    }
+  }
+
+  &.btn-primary {
+    @include animate(background-color color);
+    background-color: $main-color;
+    color: $text-color;
+
+    &:hover {
+      background-color: darken($main-color, 20%);
+    }
+  }
+
+  &.btn-secondary {
+    @include animate(background-color color);
+    background-color: $text-color;
+    color: $white;
+
+    &:hover {
+      background-color: lighten($text-color, 20%);
+      color: darken($white, 20%);
+    }
+  }
+
+  &.btn-outline-primary {
+    @include animate(background-color color);
+    border: 1px solid $text-color;
+    color: $text-color;
+
+    &:hover {
+      background-color: $text-color;
+      color: $white;
+    }
+  }
+
+  &.btn-outline-secondary {
+    @include animate(background-color color);
+    border: 1px solid $white;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $text-color;
+    }
+  }
+}
